@@ -1,0 +1,48 @@
+#return_detail {
+    display: none;
+}
+
+body {
+    font-family: 'Ubuntu', 'Times New Roman', serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.header {
+    background-image: url("../img/logo.png");
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    position: relative;
+}
+
+.heading {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 80%;
+}
+
+
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        margin-top: 0;
+    }
+}
