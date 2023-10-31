@@ -16,22 +16,121 @@ h1 {
     color: white;
 }
 
-.header {
-    background-image: url("../img/logo.png");
+.bg-header {
+    background-image: url(../img/bg-kl.jpg);
     height: 600px;
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    background-size: cover;
+}
+
+.header {
+    height: 600px;
     position: relative;
 }
 
 .heading {
     position: absolute;
     top: 20%;
-    left: 5%;
-    width: 80%;
+    width: 90%;
+    color: white;
 }
 
+.bg-kl {
+    background-image: url(../img/bg-kl.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+}
+
+.contact-btn {
+    width: 75%;
+    display: flex;
+}
+
+.contact-btn-sm {
+    display: none;
+}
+
+.car-display {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1140px) {
+    .contact-btn {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .heading {
+        top: 10%;
+    }
+
+    .contact-btn {
+        display: block;
+        text-align: center;
+    }
+
+    .contact-btn a {
+        margin: 10px;
+    }
+
+    .content-1 {
+        flex-direction: column;
+    }
+
+    .content-1 div {
+        width: 90%;
+        margin: 20px;
+    }
+
+    .car-display {
+        flex-direction: column;
+    }
+
+    .awards {
+        flex-wrap: wrap;
+        width: 50%;
+        margin: auto;
+    }
+
+    .awards div {
+        flex: 50%;
+        width: 100px !important;
+    }
+
+}
+
+.content-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+
+}
+
+.center-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.center-underline::after {
+    content: "";
+    display: block;
+    width: 400px;
+    /* Adjust the width of the underline as needed */
+    height: 5px;
+    /* Adjust the height of the underline as needed */
+    background-color: red;
+    /* Adjust the color of the underline as needed */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center the underline horizontally */
+}
 
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
@@ -45,4 +144,63 @@ h1 {
     .navbar .nav-item .dropdown-menu {
         margin-top: 0;
     }
+}
+
+/* menu */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+
+.overlay a:hover,
+.overlay a:focus {
+    color: grey;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.blur {
+    filter: blur(5px);
 }
