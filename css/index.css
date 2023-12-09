@@ -2,6 +2,9 @@
     display: none;
 }
 
+.footer span {
+    font-size: 10px;
+}
 
 body {
     font-family: 'Ubuntu', 'Times New Roman', serif;
@@ -66,6 +69,12 @@ h1 {
     justify-content: center;
 }
 
+@media screen and (max-width: 776px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+
 .width-75 {
     width: 75%;
 }
@@ -75,6 +84,13 @@ h1 {
         width: 100% !important;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .bars {
+        display: block;
+    }
+}
+
 
 @media screen and (max-width:760px) {
     .width-75 {
