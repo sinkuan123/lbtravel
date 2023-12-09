@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/malaysia.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="js/script.js">
+    <script src="https://kit.fontawesome.com/d6ceb9e7bd.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/logo.png" type="image/icon type">
+
+    <title>LB Transport</title>
+    <style>
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            background-color: rgba(240, 250, 253);
+            /* Change to your desired background color */
+            border-color: #dee2e6 #dee2e6 rgba(240, 250, 253);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container-fluid bg-black">
+            <div class="row justify-content-between align-items-center w-100">
+                <div class="col-3 ps-5"><a href="index.php"><img src="img/logo.png" width="100" alt=""></a></div>
+                <div class="col-9 text-end">
+                    <a href="booking.php" class="btn btn-danger">
+                        <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
+                            Booking</span>
+                    </a>
+                    <a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl"
+                            style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <img src="img/logo.png" width="200" alt="">
+                    <a href="about.html">Home</a>
+                    <a href="services.html">Malaysia</a>
+                    <a href="product.html">MPV car</a>
+                    <a href="contact-us.html">Rates</a>
+                </div>
+            </div>
+        </div>
+        <div id="blur">
+            <div class="bg-desaru">
+                <div class="jb-heading">
+                    <h1>Private Taxi From Singapore to Malacca</h1>
+                    <span class="w-25 border border-danger border-3 rounded red-line"></span>
+                    <div class="row align-items-center car-flex my-5">
+                        <div class="col">
+                            <h5>You can find Desaru Malaysia in the Kota Tinggi-Johor Bahru's seaside leisure resort in
+                                Johor, Malaysia. With waterfalls and water parks, white and long sandy beaches, and
+                                woodlands where you can watch fireflies, it is a paradise for tourists to vacation.</h5>
+                            <a href="booking.php" class="btn btn-success mx-5 p-3 mt-5">
+                                <i class="fa-brands fa-whatsapp pe-3" style="color: #ffffff;"></i><span
+                                    class="fs-6">WhatsApp Us (+65)8913 4901</span>
+                            </a>
+                        </div>
+                        <div class="col car-img">
+                            <img src="img/alphard.webp" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-car">
+                <div class="text-center pt-5">
+                    <h1>OUR PREMIUM CARS</h1>
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="border-end border-1 border-black">
+                            <p class="px-3 pt-2 fs-5">Luxury</p>
+                        </div>
+                        <div class="border-end border-1 border-black">
+                            <p class="px-3 pt-2 fs-5">Comfort</p>
+                        </div>
+                        <div class="">
+                            <p class="px-3 pt-2 fs-5">Affordable</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pb-5">
+                    <div class="car-display my-5">
+                        <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
+                            <img src="img/innova.webp" class="img-thumbnail border-0" alt="">
+                            <p>Toyota Innova</p>
+                            <p>(7 seaters)</p>
+                            <a href="" class="btn btn-danger">BOOK NOW</a>
+                        </div>
+                        <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
+                            <img src="img/alphard.webp" class="img-thumbnail border-0" alt="">
+                            <p>Toyota Alphard</p>
+                            <p>(7 seaters)</p>
+                            <a href="" class="btn btn-danger">BOOK NOW</a>
+                        </div>
+                        <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
+                            <img src="img/starex.webp" class="img-thumbnail border-0" alt="">
+                            <p>Hyundai Starex</p>
+                            <p>(11 seaters)</p>
+                            <a href="" class="btn btn-danger">BOOK NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pb-5">
+                    <h1 class="text-center pb-5">Private Transport From Singapore to Desaru</h1>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active px-3" id="description-tab" data-toggle="tab" href="#description"
+                                role="tab" aria-controls="description" aria-selected="true">Description</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" id="how-to-book-tab" data-toggle="tab" href="#how-to-book"
+                                role="tab" aria-controls="how-to-book" aria-selected="false">How To Book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" id="additional-info-tab" data-toggle="tab" href="#additional-info"
+                                role="tab" aria-controls="additional-info" aria-selected="false">Additional
+                                Information</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-3 border border-top-0 " id="myTabContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel"
+                            aria-labelledby="description-tab">
+                            <ul>
+
+                                <li>Direct transfer services between Singapore and Desaru (no need to change transport).
+                                </li>
+                                <li>Provided door-to-door Services (pick you up at any place and anytime as your wish).
+                                </li>
+                                <li>Hassle-free when crossing Singapore–Malaysia Customs (do not need to get off the
+                                    vehicle
+                                    to clear immigration).</li>
+                                <li>Guarantee shortest travel time through roads.</li>
+                                <li>No Booking Fee Requirement.
+                                </li>
+                                <li>Free cancellation or changes in your travel itinerary.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="how-to-book" role="tabpanel" aria-labelledby="how-to-book-tab">
+                            <ul>
+                                <li>Send a Whatsapp/Wechat/Line To <a
+                                        href="https://api.whatsapp.com/send?phone=60177299308" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="link-underline-opacity-0 link-underline link-underline-opacity-75-hover">+60177299308</a>
+                                </li>
+                                <li>Fill up the <a href="https://sgmytrips.com/booking-page/"
+                                        class="link-underline-opacity-0 link-underline link-underline-opacity-75-hover">Booking
+                                        Form</a> and wait.
+                                    Customer
+                                    Services will approach you within 24 hours.</li>
+                                <li>If you are still not sure how to book, click here: <a
+                                        href="https://sgmytrips.com/how-to-book/"
+                                        class="link-underline-opacity-0 link-underline link-underline-opacity-75-hover">How
+                                        To Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="additional-info" role="tabpanel"
+                            aria-labelledby="additional-info-tab">
+                            <h3>Additional <strong>Pick-up / Drop-Off Point:</strong></h3>
+                            <ul>
+                                <li>You will be charged an extra SGD 5 for each pick-up or drop-off point added.</li>
+                                <li>You can add as many extra points as you need.</li>
+                                <li>There is a waiting time of 1 hour each (TOYOTA INNOVA SGD 35 / TOYOTA ALPHARD &amp;
+                                    HYUNDAI
+                                    STAREX SGD 40).</li>
+                            </ul>
+                            <h3><strong>Arrival Transfer (Taking Flight-Changi Airport):</strong></h3>
+                            <ul>
+                                <li>Depending on the scheduled pick-up time, we will not charge you for the first hour
+                                    of
+                                    waiting.
+                                    However, beyond 1 hour, additional charges will be applied (TOYOTA INNOVA SGD 35 /
+                                    TOYOTA
+                                    ALPHARD &amp; HYUNDAI STAREX SGD 40).</li>
+                                <li>If you are taking a flight, <b>please provide us your flight number for
+                                        reference</b> so our
+                                    driver can track your flight details.</li>
+                            </ul>
+                            <h3><strong>Departure Transfer / Point-to-Point Transfer</strong><strong>:</strong></h3>
+                            <ul>
+                                <li>There are no extra charges for Parking Fees, Fuel Surcharges, or Additional Booking
+                                    Charges.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-danger text-center py-5">Malaysia Association of Tour & Travel Agent</h1>
+            <div class="d-flex justify-content-center pb-5 awards">
+                <div class="">
+                    <img src="img/matta-150x150.webp" alt="" width="100">
+                </div>
+                <div class="">
+                    <img src="img/motac-150x150.webp" alt="" width="100">
+                </div>
+                <div class="">
+                    <img src="img/Screen-Shot-2018-10-03-at-11.13.30-AM-150x150.webp" alt="" width="100px">
+                </div>
+                <div class="">
+                    <img src="img/singapore-tourism-150x150.webp" alt="" width="100px">
+                </div>
+                <div class="">
+                    <img src="img/TA-AWards-icon-180x180.webp" alt="" width="100px">
+                </div>
+                <div class="">
+                    <img src="img/tourism-nytdfem4d6gpcyzf82cm2elqh0btjalnlrstulk63i-qaxhibtlui0ntiarmng5wx7sbo46gd7nb6t03ys5i6.webp"
+                        alt="" width="150px">
+                </div>
+            </div>
+            <div class="container-fluid bg-black">
+                <div class="row text-light py-5">
+                    <div class="col col-5 text-center">
+                        <a href="index.php"><img src="img/logo.png" width="50%" alt=""></a>
+                        <p class="w-50 mx-auto">Singapore To Malaysia Leading Provider Of MPV Private Car Travelling
+                            Service</p>
+                    </div>
+                    <div class="col">
+                        <p class="pb-3">Hot Destination</p>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Legoland
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Desaru
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Malacca
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Mersing
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Tioman island
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Port Dickson
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Kuala Lumpur
+                            </span>
+                        </div>
+                        <div class="py-1">
+                            <span>
+                                <img src="img/location.svg" alt="">
+                            </span>
+                            <span>
+                                Genting Highland
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <p class="pb-3">Services</p>
+                        <div class="py-1">
+                            <span></span>
+                            <span>Airport transfer</span>
+                        </div>
+                        <div class="py-1">
+                            <span></span>
+                            <span>Business Trips</span>
+                        </div>
+                        <div class="py-1">
+                            <span></span>
+                            <span>Family Outings</span>
+                        </div>
+                        <div class="py-1">
+                            <span></span>
+                            <span>Theme Park Outings</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="pb-3">Contact</p>
+                        <div class="py-1">LBTRAVEL.COM</div>
+                        <div class="py-1">
+                            <span></span>
+                            <span>ADDRESS</span>
+                        </div>
+                        <div class="py-1">
+                            <span><i class="fa-solid fa-phone" style="color: #ffffff;"></i></span>
+                            <span>+65 8057 9903</span>
+                        </div>
+                        <div class="py-1">
+                            <span><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i></span>
+                            <span>+60 11-2825 8565</span>
+                        </div>
+                        <div class="py-1"><span><i class="fa-brands fa-weixin" style="color: #ffffff;"></i></span>
+                            <span>LbTravelwTransport</span>
+                        </div>
+                        <div class="py-1"> <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
+                            <span>Lbtraveltransport@gmail.com</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let menuOpen = false; // Initialize a variable to track the menu state
+
+        function openNav() {
+            if (window.innerWidth < 900) {
+                document.getElementById("myNav").style.width = "100%";
+                menuOpen = true; // Set the menu state to open
+            } else {
+                document.getElementById("myNav").style.width = "30%";
+                document.getElementById("blur").classList.add("blur");
+                menuOpen = true; // Set the menu state to open
+            }
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            document.getElementById("blur").classList.remove("blur");
+            menuOpen = false; // Set the menu state to closed
+        }
+
+        window.addEventListener("resize", function () {
+            if (menuOpen == true) {
+                // Only adjust the menu width if it wasn't explicitly opened
+                if (window.innerWidth < 900) {
+                    document.getElementById("myNav").style.width = "100%";
+                } else {
+                    document.getElementById("myNav").style.width = "30%";
+                }
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
