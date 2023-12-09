@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="container-fluid bg-black">
             <div class="row justify-content-between align-items-center w-100">
-                <div class="col-3 ps-5"><a href="index.php"><img src="img/logo.png" width="100" alt=""></a></div>
+                <div class="col-3 ps-5"><a href="index.html"><img src="img/logo.png" width="100" alt=""></a></div>
                 <div class="col-9 text-end">
                     <a href="booking.php" class="btn btn-danger">
                         <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
@@ -40,14 +40,44 @@
                             style="color: #ffffff;"></i></a>
                 </div>
             </div>
-            <div id="myNav" class="overlay">
+            <div id="myNav" class="overlay overflow-auto">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <img src="img/logo.png" width="200" alt="">
-                    <a href="about.html">Home</a>
-                    <a href="services.html">Malaysia</a>
-                    <a href="product.html">MPV car</a>
-                    <a href="contact-us.html">Rates</a>
+                    <a href="index.html">Home</a>
+                    <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;" class="mx-3">Malaysia <i
+                            class="fa-solid fa-caret-down fa-sm"></i></a>
+                    <div id="malaysia" style="display: none;">
+                        <a onclick="closeMalaysia()" class="mx-3">Malaysia <i
+                                class="fa-solid fa-caret-up fa-sm"></i></a>
+                        <ul class="list-group">
+                            <li class="list-group-item border-0">
+                                <a href="johor-bahru.html" class="fs-5 p-0">Johor Bahru</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="legoland.html" class="fs-5 p-0">Legoland</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="malacca.html" class="fs-5 p-0">Malacca</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="desaru.html" class="fs-5 p-0">Desaru</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="mersing.html" class="fs-5 p-0">Mersing</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="port-dickson.html" class="fs-5 p-0">Port Dickson</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="genting-highland.html" class="fs-5 p-0">Genting Highland</a>
+                            </li>
+                            <li class="list-group-item border-0">
+                                <a href="kuala-lumpur.html" class="fs-5 p-0">Kuala Lumpur</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="rates.html">Rates</a>
                 </div>
             </div>
         </div>
@@ -213,160 +243,129 @@
                         alt="" width="150px">
                 </div>
             </div>
-            <div class="container-fluid bg-black">
-                <div class="row text-light py-5">
-                    <div class="col col-5 text-center">
-                        <a href="index.php"><img src="img/logo.png" width="50%" alt=""></a>
-                        <p class="w-50 mx-auto">Singapore To Malaysia Leading Provider Of MPV Private Car Travelling
-                            Service</p>
+            <div class="container-fluid bg-black footer">
+                <div class="row text-light">
+                    <div class="col-5 text-center py-5">
+                        <a href="index.html"><img src="img/logo.png" width="50%" alt=""></a>
+                        <p class="width-75 mx-auto">Singapore To Malaysia Leading Provider Of MPV Private Car Travelling
+                            Service
+                        </p>
                     </div>
-                    <div class="col">
-                        <p class="pb-3">Hot Destination</p>
+                    <div class="col py-5">
+                        <p class=""><strong>Hot Destination</strong></p>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Legoland
-                            </span>
+                                <small> Legoland
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Desaru
-                            </span>
+                                <small> Desaru
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Malacca
-                            </span>
+                                <small> Malacca
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Mersing
-                            </span>
+                                <small> Mersing
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Tioman island
-                            </span>
+                                <small> Tioman island
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Port Dickson
-                            </span>
+                                <small> Port Dickson
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Kuala Lumpur
-                            </span>
+                                <small> Kuala Lumpur
+                                </small> </span>
                         </div>
                         <div class="py-1">
                             <span>
-                                <img src="img/location.svg" alt="">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
                             </span>
                             <span>
-                                Genting Highland
+                                <small> Genting Highlan</small>d
                             </span>
                         </div>
 
                     </div>
-                    <div class="col">
-                        <p class="pb-3">Services</p>
+                    <div class="col py-5">
+                        <p class=""><strong>Services</strong></p>
                         <div class="py-1">
-                            <span></span>
-                            <span>Airport transfer</span>
+                            <span><i class="fa-solid fa-plane" style="color: #ffffff;"></i></span>
+                            <span><small>Airport transfer</small> </span>
                         </div>
                         <div class="py-1">
-                            <span></span>
-                            <span>Business Trips</span>
+                            <span><i class="fa-solid fa-business-time" style="color: #ffffff;"></i></span>
+                            <span><small>Business Trips</small> </span>
                         </div>
                         <div class="py-1">
-                            <span></span>
-                            <span>Family Outings</span>
+                            <span><i class="fa-solid fa-people-group" style="color: #ffffff;"></i></span>
+                            <span><small>Family Outings</small> </span>
                         </div>
                         <div class="py-1">
-                            <span></span>
-                            <span>Theme Park Outings</span>
+                            <span><i class="fa-solid fa-user-group" style="color: #ffffff;"></i></span>
+                            <span><small>Theme Park Outings</small> </span>
                         </div>
                     </div>
-                    <div class="col">
-                        <p class="pb-3">Contact</p>
-                        <div class="py-1">LBTRAVEL.COM</div>
-                        <div class="py-1">
-                            <span></span>
-                            <span>ADDRESS</span>
+                    <div class="col py-5">
+                        <p><strong>Contact</strong> </p>
+                        <div class="py-1"><span><small>LBTRAVEL.COM</small></span></div>
+                        <div class="py-1 d-flex align-items-center">
+                            <span><i class="fa-solid fa-map-location-dot me-1" style="color: #ffffff;"></i></span>
+                            <span><small>A-122-A, Jalan PJU 10/4, Damansara Damai, 47830 Petaling Jaya,
+                                    Selangor</small></span>
                         </div>
                         <div class="py-1">
                             <span><i class="fa-solid fa-phone" style="color: #ffffff;"></i></span>
-                            <span>+65 8057 9903</span>
+                            <span><small>+65 8057 9903</small></span>
                         </div>
                         <div class="py-1">
                             <span><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i></span>
-                            <span>+60 11-2825 8565</span>
+                            <span><small>+60 11-2825 8565</small></span>
                         </div>
                         <div class="py-1"><span><i class="fa-brands fa-weixin" style="color: #ffffff;"></i></span>
-                            <span>LbTravelwTransport</span>
+                            <span><small>LbTravelwTransport</small></span>
                         </div>
                         <div class="py-1"> <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
-                            <span>Lbtraveltransport@gmail.com</span>
+                            <span><small>Lbtraveltransport@gmail.com</small></span>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-
-        let menuOpen = false; // Initialize a variable to track the menu state
-
-        function openNav() {
-            if (window.innerWidth < 900) {
-                document.getElementById("myNav").style.width = "100%";
-                menuOpen = true; // Set the menu state to open
-            } else {
-                document.getElementById("myNav").style.width = "30%";
-                document.getElementById("blur").classList.add("blur");
-                menuOpen = true; // Set the menu state to open
-            }
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-            document.getElementById("blur").classList.remove("blur");
-            menuOpen = false; // Set the menu state to closed
-        }
-
-        window.addEventListener("resize", function () {
-            if (menuOpen == true) {
-                // Only adjust the menu width if it wasn't explicitly opened
-                if (window.innerWidth < 900) {
-                    document.getElementById("myNav").style.width = "100%";
-                } else {
-                    document.getElementById("myNav").style.width = "30%";
-                }
-            }
-        });
-    </script>
+    <script src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
