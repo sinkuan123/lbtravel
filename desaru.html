@@ -19,9 +19,9 @@
     <style>
         .nav-tabs .nav-item.show .nav-link,
         .nav-tabs .nav-link.active {
-            background-color: rgba(240, 250, 253);
+            background-color: black;
             /* Change to your desired background color */
-            border-color: #dee2e6 #dee2e6 rgba(240, 250, 253);
+            border-color: #dee2e6 #dee2e6 black;
         }
     </style>
 </head>
@@ -36,48 +36,30 @@
                         <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
                             Booking</span>
                     </a>
-                    <a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl"
+                    <a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl bars"
                             style="color: #ffffff;"></i></a>
                 </div>
             </div>
-            <div id="myNav" class="overlay overflow-auto">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="myNav" class="overlay overflow-auto bg-black">
+                <a href="javascript:void(0)" class="closebtn text-white" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <img src="img/logo.png" width="200" alt="">
-                    <a href="index.html">Home</a>
-                    <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;" class="mx-3">Malaysia <i
-                            class="fa-solid fa-caret-down fa-sm"></i></a>
-                    <div id="malaysia" style="display: none;">
-                        <a onclick="closeMalaysia()" class="mx-3">Malaysia <i
+                    <a href="index.html" class="text-white">Home</a>
+                    <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;"
+                        class="mx-3 text-white">Malaysia <i class="fa-solid fa-caret-down fa-sm"></i></a>
+                    <div id="malaysia" style="display: none;" class="bg-black text-white">
+                        <a onclick="closeMalaysia()" class="mx-3 text-white">Malaysia <i
                                 class="fa-solid fa-caret-up fa-sm"></i></a>
-                        <ul class="list-group">
-                            <li class="list-group-item border-0">
-                                <a href="johor-bahru.html" class="fs-5 p-0">Johor Bahru</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="legoland.html" class="fs-5 p-0">Legoland</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="malacca.html" class="fs-5 p-0">Malacca</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="desaru.html" class="fs-5 p-0">Desaru</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="mersing.html" class="fs-5 p-0">Mersing</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="port-dickson.html" class="fs-5 p-0">Port Dickson</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="genting-highland.html" class="fs-5 p-0">Genting Highland</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="kuala-lumpur.html" class="fs-5 p-0">Kuala Lumpur</a>
-                            </li>
-                        </ul>
+                        <a href="johor-bahru.html" class="fs-5 p-0 text-white">Johor Bahru</a>
+                        <a href="legoland.html" class="fs-5 p-0 text-white">Legoland</a>
+                        <a href="malacca.html" class="fs-5 p-0 text-white">Malacca</a>
+                        <a href="desaru.html" class="fs-5 p-0 text-white">Desaru</a>
+                        <a href="mersing.html" class="fs-5 p-0 text-white">Mersing</a>
+                        <a href="port-dickson.html" class="fs-5 p-0 text-white">Port Dickson</a>
+                        <a href="genting-highland.html" class="fs-5 p-0 text-white">Genting Highland</a>
+                        <a href="kuala-lumpur.html" class="fs-5 p-0 text-white">Kuala Lumpur</a>
                     </div>
-                    <a href="rates.html">Rates</a>
+                    <a href="rates.html" class="text-white">Rates</a>
                 </div>
             </div>
         </div>
@@ -102,14 +84,14 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-car">
-                <div class="text-center pt-5">
+            <div class="bg-black">
+                <div class="text-center pt-5 text-white">
                     <h1>OUR PREMIUM CARS</h1>
                     <div class="d-flex justify-content-center mt-3">
-                        <div class="border-end border-1 border-black">
+                        <div class="border-end border-1 border-white">
                             <p class="px-3 pt-2 fs-5">Luxury</p>
                         </div>
-                        <div class="border-end border-1 border-black">
+                        <div class="border-end border-1 border-white">
                             <p class="px-3 pt-2 fs-5">Comfort</p>
                         </div>
                         <div class="">
@@ -120,39 +102,72 @@
                 <div class="container pb-5">
                     <div class="car-display my-5">
                         <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
-                            <img src="img/innova.webp" class="img-thumbnail border-0" alt="">
-                            <p>Toyota Innova</p>
-                            <p>(7 seaters)</p>
+                            <img src="img/innova.webp" class="img-fluid border-0" alt="">
+                            <span class="fs-4 fw-bold">Toyota Innova</span>
+                            <span class="w-25 border border-danger border-2 rounded d-block mx-auto"></span>
+                            <div class="d-flex justify-content-evenly my-3">
+                                <div>
+                                    <small>One-Way</small>
+                                    <p class="fs-4">340SGD</p>
+                                </div>
+                                <div>
+                                    <small>Return</small>
+                                    <p class="fs-4">640SGD</p>
+                                </div>
+                            </div>
                             <a href="" class="btn btn-danger">BOOK NOW</a>
                         </div>
                         <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
-                            <img src="img/alphard.webp" class="img-thumbnail border-0" alt="">
-                            <p>Toyota Alphard</p>
-                            <p>(7 seaters)</p>
+                            <img src="img/alphard.webp" class="img-fluid border-0" alt="">
+                            <span class="fs-4 fw-bold">Toyota Alphard</span>
+                            <span class="w-25 border border-danger border-2 rounded d-block mx-auto"></span>
+                            <div class="d-flex justify-content-evenly my-3">
+                                <div>
+                                    <small>One-Way</small>
+                                    <p class="fs-4">390SGD</p>
+                                </div>
+                                <div>
+                                    <small>Return</small>
+                                    <p class="fs-4">760SGD</p>
+                                </div>
+                            </div>
                             <a href="" class="btn btn-danger">BOOK NOW</a>
                         </div>
                         <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
-                            <img src="img/starex.webp" class="img-thumbnail border-0" alt="">
-                            <p>Hyundai Starex</p>
-                            <p>(11 seaters)</p>
+                            <img src="img/starex.webp" class="img-fluid border-0" alt="">
+                            <span class="fs-4 fw-bold">Hyundai Starex</span>
+                            <span class="w-25 border border-danger border-2 rounded d-block mx-auto"></span>
+                            <div class="d-flex justify-content-evenly my-3">
+                                <div>
+                                    <small>One-Way</small>
+                                    <p class="fs-4">390SGD</p>
+                                </div>
+                                <div>
+                                    <small>Return</small>
+                                    <p class="fs-4">760SGD</p>
+                                </div>
+                            </div>
                             <a href="" class="btn btn-danger">BOOK NOW</a>
                         </div>
                     </div>
                 </div>
-                <div class="container pb-5">
+                <div class="container pb-5 text-white">
                     <h1 class="text-center pb-5">Private Transport From Singapore to Desaru</h1>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active px-3" id="description-tab" data-toggle="tab" href="#description"
-                                role="tab" aria-controls="description" aria-selected="true">Description</a>
+                            <a class="nav-link active px-3 text-white" id="description-tab" data-toggle="tab"
+                                href="#description" role="tab" aria-controls="description"
+                                aria-selected="true">Description</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" id="how-to-book-tab" data-toggle="tab" href="#how-to-book"
-                                role="tab" aria-controls="how-to-book" aria-selected="false">How To Book</a>
+                            <a class="nav-link px-3 text-white" id="how-to-book-tab" data-toggle="tab"
+                                href="#how-to-book" role="tab" aria-controls="how-to-book" aria-selected="false">How To
+                                Book</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" id="additional-info-tab" data-toggle="tab" href="#additional-info"
-                                role="tab" aria-controls="additional-info" aria-selected="false">Additional
+                            <a class="nav-link px-3 text-white" id="additional-info-tab" data-toggle="tab"
+                                href="#additional-info" role="tab" aria-controls="additional-info"
+                                aria-selected="false">Additional
                                 Information</a>
                         </li>
                     </ul>
