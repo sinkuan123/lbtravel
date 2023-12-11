@@ -7,6 +7,16 @@
     color: white;
 }
 
+.bg-jb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .bg-legoland {
     background-image: url(../img/legoland.png);
     background-repeat: no-repeat;
@@ -14,6 +24,16 @@
     height: 805px;
     position: relative;
     color: white;
+}
+
+.bg-legoland::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -24,6 +44,16 @@
     height: 805px;
     position: relative;
     color: white;
+}
+
+.bg-malacca::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -57,6 +87,16 @@
     color: white;
 }
 
+.bg-mersing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .bg-port-dickson {
     background-image: url(../img/port-dickson.png);
     background-repeat: no-repeat;
@@ -64,6 +104,16 @@
     height: 805px;
     position: relative;
     color: white;
+}
+
+.bg-port-dickson::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .bg-genting-highland {
@@ -75,6 +125,17 @@
     color: white;
 }
 
+.bg-genting-highland::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 .bg-kuala-lumpur {
     background-image: url(../img/kuala-lumpur.png);
     background-repeat: no-repeat;
@@ -82,6 +143,16 @@
     height: 805px;
     position: relative;
     color: white;
+}
+
+.bg-kuala-lumpur::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -129,6 +200,10 @@
 }
 
 @media screen and (max-width: 700px) {
+    .bg-malacca {
+        height: 700px;
+    }
+
     .bg-kuala-lumpur {
         height: 700px;
     }
