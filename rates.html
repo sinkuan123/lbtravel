@@ -19,37 +19,41 @@
 <body>
     <div class="container-fluid">
         <div class="container-fluid bg-black">
-            <div class="row justify-content-between align-items-center w-100">
-                <div class="col-3 ps-5"><a href="index.html"><img src="img/logo.png" width="100" alt=""></a></div>
-                <div class="col-9 text-end">
-                    <a href="booking.php" class="btn btn-danger">
-                        <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
-                            Booking</span>
-                    </a>
-                    <a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl bars"
-                            style="color: #ffffff;"></i></a>
-                </div>
-            </div>
-            <div id="myNav" class="overlay overflow-auto bg-black">
-                <a href="javascript:void(0)" class="closebtn text-white" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <img src="img/logo.png" width="200" alt="">
-                    <a href="index.html" class="text-white">Home</a>
-                    <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;"
-                        class="mx-3 text-white">Malaysia <i class="fa-solid fa-caret-down fa-sm"></i></a>
-                    <div id="malaysia" style="display: none;" class="bg-black text-white">
-                        <a onclick="closeMalaysia()" class="mx-3 text-white">Malaysia <i
-                                class="fa-solid fa-caret-up fa-sm"></i></a>
-                        <a href="johor-bahru.html" class="fs-5 p-0 text-white">Johor Bahru</a>
-                        <a href="legoland.html" class="fs-5 p-0 text-white">Legoland</a>
-                        <a href="malacca.html" class="fs-5 p-0 text-white">Malacca</a>
-                        <a href="desaru.html" class="fs-5 p-0 text-white">Desaru</a>
-                        <a href="mersing.html" class="fs-5 p-0 text-white">Mersing</a>
-                        <a href="port-dickson.html" class="fs-5 p-0 text-white">Port Dickson</a>
-                        <a href="genting-highland.html" class="fs-5 p-0 text-white">Genting Highland</a>
-                        <a href="kuala-lumpur.html" class="fs-5 p-0 text-white">Kuala Lumpur</a>
+            <div class="container mx-0">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-3"><a href="index.html"><img src="img/logo.png" width="100" alt=""></a></div>
+                    <div class="col-9 text-end">
+                        <a href="booking.php" class="btn btn-danger">
+                            <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
+                                Booking</span>
+                        </a>
+                        <span id="bar"><a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl bars"
+                                    style="color: #ffffff;"></i></a></span>
                     </div>
-                    <a href="rates.html" class="text-white">Rates</a>
+                    <a onclick="openNav()" class="text-center my-2" id="mobile-bar" style="display: none;"><i
+                            class="fa-solid fa-bars fa-2xl bars" style="color: #ffffff;"></i></a>
+                </div>
+                <div id="myNav" class="overlay overflow-auto bg-black">
+                    <a href="javascript:void(0)" class="closebtn text-white" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <img src="img/logo.png" width="200" alt="">
+                        <a href="index.html" class="text-white">Home</a>
+                        <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;"
+                            class="mx-3 text-white">Malaysia <i class="fa-solid fa-caret-down fa-sm"></i></a>
+                        <div id="malaysia" style="display: none;" class="bg-black text-white">
+                            <a onclick="closeMalaysia()" class="mx-3 text-white">Malaysia <i
+                                    class="fa-solid fa-caret-up fa-sm"></i></a>
+                            <a href="johor-bahru.html" class="fs-5 p-0 text-white">Johor Bahru</a>
+                            <a href="legoland.html" class="fs-5 p-0 text-white">Legoland</a>
+                            <a href="malacca.html" class="fs-5 p-0 text-white">Malacca</a>
+                            <a href="desaru.html" class="fs-5 p-0 text-white">Desaru</a>
+                            <a href="mersing.html" class="fs-5 p-0 text-white">Mersing</a>
+                            <a href="port-dickson.html" class="fs-5 p-0 text-white">Port Dickson</a>
+                            <a href="genting-highland.html" class="fs-5 p-0 text-white">Genting Highland</a>
+                            <a href="kuala-lumpur.html" class="fs-5 p-0 text-white">Kuala Lumpur</a>
+                        </div>
+                        <a href="rates.html" class="text-white">Rates</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,11 +68,11 @@
                         <div class="d-flex justify-content-center align-items-center rounded rounded-5">
                             <div class="col text-center">
                                 <p class="bg-primary text-white py-3 mb-0">Toyota Innova</p>
-                                <h2 class="py-3 border border-dark my-0">100 SGD(200 SGD Return)</h2>
+                                <h2 class="py-3 border border-dark my-0">100SGD (200SGD Return)</h2>
                             </div>
                             <div class="col text-center">
                                 <p class="bg-dark text-white py-3 mb-0">Toyota Alphard/Vellfire/Starex</p>
-                                <h2 class="py-3 border border-dark border-start-0 my-0">140 SGD(260 SGD Return)</h2>
+                                <h2 class="py-3 border border-dark border-start-0 my-0">140SGD (260SGD Return)</h2>
                             </div>
                         </div>
                         <div class="border border-dark container py-3">
@@ -226,11 +230,11 @@
                         <div class="d-flex justify-content-center align-items-center rounded rounded-5">
                             <div class="col text-center">
                                 <p class="bg-primary text-white py-3 mb-0">Toyota Innova</p>
-                                <h2 class="py-3 border border-dark my-0">100 SGD(200 SGD Return)</h2>
+                                <h2 class="py-3 border border-dark my-0">100SGD (200SGD Return)</h2>
                             </div>
                             <div class="col text-center">
                                 <p class="bg-dark text-white py-3 mb-0">Toyota Alphard/Vellfire/Starex</p>
-                                <h2 class="py-3 border border-dark border-start-0 my-0">140 SGD(260 SGD Return)</h2>
+                                <h2 class="py-3 border border-dark border-start-0 my-0">140SGD (260SGD Return)</h2>
                             </div>
                         </div>
                         <div class="border border-dark container py-3">
@@ -246,73 +250,73 @@
                         <table class="table">
                             <tr>
                                 <th>Singapore To</th>
-                                <th class="bg-primary text-white">Toyota Innova</th>
-                                <th class="bg-dark text-white">Toyota Alphard/Vellfire/Starex</th>
+                                <th class="bg-primary text-white col-4">Toyota Innova</th>
+                                <th class="bg-dark text-white col-4">Toyota Alphard /Vellfire /Starex</th>
                             </tr>
                             <tr>
                                 <td>Desaru</td>
-                                <td>160 SGD(300 SGD Return)</td>
-                                <td>200 SGD(380 SGD Return)</td>
+                                <td>160SGD (300SGD Return)</td>
+                                <td>200SGD (380SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Mersing</td>
-                                <td>220 SGD(420 SGD Return)</td>
-                                <td>270 SGD(520 SGD Return)</td>
+                                <td>220SGD (420SGD Return)</td>
+                                <td>270SGD (520SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Melaka</td>
-                                <td>260 SGD(500 SGD Return)</td>
-                                <td>310 SGD(600 SGD Return)</td>
+                                <td>260SGD (500SGD Return)</td>
+                                <td>310SGD (600SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Port Dickson / Seremban</td>
-                                <td>300 SGD(580 SGD Return)</td>
-                                <td>350 SGD(660 SGD Return)</td>
+                                <td>300SGD (580SGD Return)</td>
+                                <td>350SGD (660SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Kuala Lumpur / Klang / Selangor</td>
-                                <td>340 SGD(640 SGD Return)</td>
-                                <td>390 SGD(760 SGD Return)</td>
+                                <td>340SGD (640SGD Return)</td>
+                                <td>390SGD (760SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Genting Highlands / Kuantan</td>
-                                <td>380 SGD(720 SGD Return)</td>
-                                <td>420 SGD(820 SGD Return)</td>
+                                <td>380SGD (720SGD Return)</td>
+                                <td>420SGD (820SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Sekinchan</td>
-                                <td>400 SGD(780 SGD Return)</td>
-                                <td>420 SGD(820 SGD Return)</td>
+                                <td>400SGD (780SGD Return)</td>
+                                <td>420SGD (820SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>Club Med Cherating / Cameron Highlands / Ipoh</td>
-                                <td>510 SGD(1000 SGD Return)</td>
-                                <td>560 SGD(1100 SGD Return)</td>
+                                <td>510SGD (1000SGD Return)</td>
+                                <td>560SGD (1100SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>PEKAN NANAS</td>
-                                <td>140 SGD(260 SGD Return)</td>
-                                <td>170 SGD(320 SGD Return)</td>
+                                <td>140SGD (260SGD Return)</td>
+                                <td>170SGD (320SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>SEDENAK</td>
-                                <td>140 SGD(260 SGD Return)</td>
-                                <td>170 SGD(320 SGD Return)</td>
+                                <td>140SGD (260SGD Return)</td>
+                                <td>170SGD (320SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>KOTA TINGGI</td>
-                                <td>140 SGD(260 SGD Return)</td>
-                                <td>170 SGD(320 SGD Return)</td>
+                                <td>140SGD (260SGD Return)</td>
+                                <td>170SGD (320SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>PONTIAN KECIL</td>
-                                <td>140 SGD(260 SGD Return)</td>
-                                <td>170 SGD(320 SGD Return)</td>
+                                <td>140SGD (260SGD Return)</td>
+                                <td>170SGD (320SGD Return)</td>
                             </tr>
                             <tr>
                                 <td>KUKUP</td>
-                                <td>170 SGD(330 SGD Return)</td>
-                                <td>200 SGD(390 SGD Return)</td>
+                                <td>170SGD (330SGD Return)</td>
+                                <td>200SGD (390SGD Return)</td>
                             </tr>
                         </table>
                     </div>
@@ -323,28 +327,28 @@
                         <table class="table">
                             <tr>
                                 <th>Airport</th>
-                                <th class="bg-primary text-white">Toyota Innova</th>
-                                <th class="bg-dark text-white">Toyota Alphard/Vellfire/Starex</th>
+                                <th class="bg-primary text-white col-4">Toyota Innova</th>
+                                <th class="bg-dark text-white col-4">Toyota Alphard /Vellfire /Starex</th>
                             </tr>
                             <tr>
                                 <td>Johor Bahru To Changi</td>
-                                <td>100 SGD</td>
-                                <td>130 SGD</td>
+                                <td>100SGD</td>
+                                <td>130SGD</td>
                             </tr>
                             <tr>
                                 <td>Singapore To Senai</td>
-                                <td>100 SGD</td>
-                                <td>130 SGD</td>
+                                <td>100SGD</td>
+                                <td>130SGD</td>
                             </tr>
                             <tr>
                                 <td>Singapore to KLIA1/2</td>
-                                <td>330 SGD</td>
-                                <td>380 SGD</td>
+                                <td>330SGD</td>
+                                <td>380SGD</td>
                             </tr>
                             <tr>
                                 <td>KLIA1/2 To Senai</td>
-                                <td>240 SGD</td>
-                                <td>270 SGD</td>
+                                <td>240SGD</td>
+                                <td>270SGD</td>
                             </tr>
                         </table>
                     </div>
@@ -355,23 +359,23 @@
                         <table class="table">
                             <tr>
                                 <th>Full Day Service Package</th>
-                                <th class="bg-primary text-white">Toyota Innova</th>
-                                <th class="bg-dark text-white">Toyota Alphard/Vellfire/Starex</th>
+                                <th class="bg-primary text-white col-4">Toyota Innova</th>
+                                <th class="bg-dark text-white col-4">Toyota Alphard /Vellfire /Starex</th>
                             </tr>
                             <tr>
                                 <td>8 Hours</td>
-                                <td>280 SGD</td>
-                                <td>330 SGD</td>
+                                <td>280SGD</td>
+                                <td>330SGD</td>
                             </tr>
                             <tr>
                                 <td>10 Hours</td>
-                                <td>300 SGD</td>
-                                <td>350 SGD</td>
+                                <td>300SGD</td>
+                                <td>350SGD</td>
                             </tr>
                             <tr>
                                 <td>12 Hours</td>
-                                <td>350 SGD</td>
-                                <td>400 SGD</td>
+                                <td>350SGD</td>
+                                <td>400SGD</td>
                             </tr>
                         </table>
                     </div>
@@ -379,14 +383,14 @@
             </div>
         </div>
         <div class="container-fluid bg-black footer">
-            <div class="row text-light">
-                <div class="col-5 text-center py-5">
+            <div class="row-cols-3 row-cols-sm-4 row text-light">
+                <div class="col-sm-5 col-12 text-center py-5">
                     <a href="index.html"><img src="img/logo.png" width="50%" alt=""></a>
                     <p class="width-75 mx-auto">Singapore To Malaysia Leading Provider Of MPV Private Car Travelling
                         Service
                     </p>
                 </div>
-                <div class="col py-5">
+                <div class="col-sm-2 col-4 py-5">
                     <p class=""><strong>Hot Destination</strong></p>
                     <div class="py-1">
                         <span>
@@ -454,7 +458,7 @@
                     </div>
 
                 </div>
-                <div class="col py-5">
+                <div class="col-sm-2 col-4 py-5">
                     <p class=""><strong>Services</strong></p>
                     <div class="py-1">
                         <span><i class="fa-solid fa-plane" style="color: #ffffff;"></i></span>
@@ -473,7 +477,7 @@
                         <span><small>Theme Park Outings</small> </span>
                     </div>
                 </div>
-                <div class="col py-5">
+                <div class="col-sm-3 col-4 py-5">
                     <p><strong>Contact</strong> </p>
                     <div class="py-1"><span><small>LBTRAVEL.COM</small></span></div>
                     <div class="py-1 d-flex align-items-center">

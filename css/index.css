@@ -254,3 +254,18 @@ h1 {
 .table th {
     border: 1px solid #000 !important;
 }
+
+
+@media screen and (max-width: 500px) {
+    p {
+        font-size: 10px;
+    }
+
+    div {
+        font-size: 10px;
+    }
+
+    .border {
+        font-size: 15px;
+    }
+}
