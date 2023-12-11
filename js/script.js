@@ -33,14 +33,6 @@ function closeNav() {
 }
 
 window.addEventListener("resize", function () {
-    if (window.innerWidth < 475) {
-        document.getElementById("mobile-bar").style.display = "block";
-        document.getElementById("bar").style.display = "none";
-    } else {
-        document.getElementById("mobile-bar").style.display = "none";
-        document.getElementById("bar").style.display = "inline";
-
-    }
     if (menuOpen == true) {
         // Only adjust the menu width if it wasn't explicitly opened
         if (window.innerWidth < 900) {

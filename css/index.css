@@ -255,8 +255,19 @@ h1 {
     border: 1px solid #000 !important;
 }
 
+#mobile-bar {
+    display: none;
+}
 
 @media screen and (max-width: 500px) {
+    #mobile-bar {
+        display: block;
+    }
+
+    #bar {
+        display: none;
+    }
+
     p {
         font-size: 10px;
     }
@@ -267,5 +278,36 @@ h1 {
 
     .border {
         font-size: 15px;
+    }
+
+    h1 {
+        font-size: 25px !important;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    h5 {
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .container {
+        margin: 0;
+    }
+
+    p {
+        font-size: 8px;
+    }
+
+    div {
+        font-size: 8px;
+    }
+
+    .border {
+        font-size: 8px;
     }
 }
