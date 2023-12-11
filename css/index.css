@@ -282,7 +282,6 @@ h1 {
 
     h1 {
         font-size: 25px !important;
-        margin-bottom: 0;
     }
 
     h2 {
@@ -309,5 +308,17 @@ h1 {
 
     .border {
         font-size: 8px;
+    }
+
+    h1 {
+        font-size: 22px !important;
+    }
+
+    h2 {
+        font-size: 16px !important;
+    }
+
+    h5 {
+        font-size: 12px !important;
     }
 }
