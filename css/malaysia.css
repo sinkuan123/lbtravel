@@ -208,8 +208,16 @@
         height: 700px;
     }
 
+    .bg-desaru {
+        height: 700px;
+    }
+
     .jb-heading h1 {
         font-size: 20px;
+    }
+
+    .jb-heading h5 {
+        font-size: 15px;
     }
 
     .jb-heading {
@@ -229,6 +237,18 @@
     }
 
     .bg-car .fs-5 {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .bg-desaru {
+        height: 600px !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .jb-heading h5 {
         font-size: 15px !important;
     }
 }
