@@ -28,61 +28,47 @@
 
 <body>
     <div class="container-fluid">
-        <div class="container-fluid bg-black">
-            <div class="row justify-content-between align-items-center w-100">
-                <div class="col-3 ps-5"><a href="index.html"><img src="img/logo.png" width="100" alt=""></a></div>
-                <div class="col-9 text-end">
-                    <a href="booking.php" class="btn btn-danger">
-                        <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
-                            Booking</span>
-                    </a>
-                    <a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl"
-                            style="color: #ffffff;"></i></a>
-                </div>
-            </div>
-            <div id="myNav" class="overlay overflow-auto">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <img src="img/logo.png" width="200" alt="">
-                    <a href="index.html">Home</a>
-                    <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;" class="mx-3">Malaysia <i
-                            class="fa-solid fa-caret-down fa-sm"></i></a>
-                    <div id="malaysia" style="display: none;">
-                        <a onclick="closeMalaysia()" class="mx-3">Malaysia <i
-                                class="fa-solid fa-caret-up fa-sm"></i></a>
-                        <ul class="list-group">
-                            <li class="list-group-item border-0">
-                                <a href="johor-bahru.html" class="fs-5 p-0">Johor Bahru</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="legoland.html" class="fs-5 p-0">Legoland</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="malacca.html" class="fs-5 p-0">Malacca</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="desaru.html" class="fs-5 p-0">Desaru</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="mersing.html" class="fs-5 p-0">Mersing</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="port-dickson.html" class="fs-5 p-0">Port Dickson</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="genting-highland.html" class="fs-5 p-0">Genting Highland</a>
-                            </li>
-                            <li class="list-group-item border-0">
-                                <a href="kuala-lumpur.html" class="fs-5 p-0">Kuala Lumpur</a>
-                            </li>
-                        </ul>
+        <div class="container-sm bg-black menu-bar">
+            <div class="container-sm">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-3"><a href="index.html"><img src="img/logo.png" width="100" alt=""></a></div>
+                    <div class="col-9 text-end">
+                        <a href="booking.php" class="btn btn-danger">
+                            <i class="fa-solid fa-car me-3" style="color: #ffffff;"></i><span class="fs-6">Online
+                                Booking</span>
+                        </a>
+                        <span id="bar"><a onclick="openNav()" class="mx-3"><i class="fa-solid fa-bars fa-2xl bars"
+                                    style="color: #ffffff;"></i></a></span>
                     </div>
-                    <a href="rates.html">Rates</a>
+                    <a onclick="openNav()" class="text-center my-2" id="mobile-bar"><i
+                            class="fa-solid fa-bars fa-2xl bars" style="color: #ffffff;"></i></a>
+                </div>
+                <div id="myNav" class="overlay overflow-auto bg-black">
+                    <a href="javascript:void(0)" class="closebtn text-white" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <img src="img/logo.png" width="200" alt="">
+                        <a href="index.html" class="text-white">Home</a>
+                        <a id="openMalaysia" onclick="openMalaysia()" style="cursor: pointer;"
+                            class="mx-3 text-white">Malaysia <i class="fa-solid fa-caret-down fa-sm"></i></a>
+                        <div id="malaysia" style="display: none;" class="bg-black text-white">
+                            <a onclick="closeMalaysia()" class="mx-3 text-white">Malaysia <i
+                                    class="fa-solid fa-caret-up fa-sm"></i></a>
+                            <a href="johor-bahru.html" class="fs-5 p-0 text-white">Johor Bahru</a>
+                            <a href="legoland.html" class="fs-5 p-0 text-white">Legoland</a>
+                            <a href="malacca.html" class="fs-5 p-0 text-white">Malacca</a>
+                            <a href="desaru.html" class="fs-5 p-0 text-white">Desaru</a>
+                            <a href="mersing.html" class="fs-5 p-0 text-white">Mersing</a>
+                            <a href="port-dickson.html" class="fs-5 p-0 text-white">Port Dickson</a>
+                            <a href="genting-highland.html" class="fs-5 p-0 text-white">Genting Highland</a>
+                            <a href="kuala-lumpur.html" class="fs-5 p-0 text-white">Kuala Lumpur</a>
+                        </div>
+                        <a href="rates.html" class="text-white">Rates</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="blur">
-            <div class="bg-genting-highland">
+            <div class="container bg-genting-highland">
                 <div class="jb-heading">
                     <h1>Private Car From Singapore To Genting Highland</h1>
                     <span class="w-25 border border-danger border-3 rounded red-line"></span>
@@ -92,9 +78,9 @@
                                 For example, tourists with 6-7 people can choose a 7 seater car to Genting Highlands (up
                                 to 11 seater car transport options).
                             </h5>
-                            <a href="booking.php" class="btn btn-success mx-5 p-3 mt-5">
-                                <i class="fa-brands fa-whatsapp pe-3" style="color: #ffffff;"></i><span
-                                    class="fs-6">WhatsApp Us (+65)8913 4901</span>
+                            <a href="booking.php" class="btn btn-success p-3 mt-5">
+                                <i class="fa-brands fa-whatsapp pe-3" style="color: #ffffff;"></i><span>WhatsApp Us
+                                    (+65)8913 4901</span>
                             </a>
                         </div>
                         <div class="col car-img">
@@ -103,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-car">
+            <div class="container bg-car">
                 <div class="text-center pt-5">
                     <h1>OUR PREMIUM CARS</h1>
                     <div class="d-flex justify-content-center mt-3">
@@ -119,29 +105,59 @@
                     </div>
                 </div>
                 <div class="container pb-5">
-                    <div class="car-display my-5">
+                    <div class="car-display my-3 my-sm-5">
                         <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
-                            <img src="img/innova.webp" class="img-thumbnail border-0" alt="">
-                            <p>Toyota Innova</p>
-                            <p>(7 seaters)</p>
+                            <img src="img/innova.webp" class="img-fluid border-0" alt="">
+                            <span class="fs-4 fw-bold">Toyota Innova</span>
+                            <span class="w-25 border border-danger border-2 rounded d-block mx-auto"></span>
+                            <div class="d-flex justify-content-evenly my-3">
+                                <div>
+                                    <small>One-Way</small>
+                                    <p class="fs-4">380SGD</p>
+                                </div>
+                                <div>
+                                    <small>Two-ways</small>
+                                    <p class="fs-4">720SGD</p>
+                                </div>
+                            </div>
                             <a href="" class="btn btn-danger">BOOK NOW</a>
                         </div>
                         <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
-                            <img src="img/alphard.webp" class="img-thumbnail border-0" alt="">
-                            <p>Toyota Alphard</p>
-                            <p>(7 seaters)</p>
+                            <img src="img/alphard.webp" class="img-fluid border-0" alt="">
+                            <span class="fs-4 fw-bold">Toyota Alphard</span>
+                            <span class="w-25 border border-danger border-2 rounded d-block mx-auto"></span>
+                            <div class="d-flex justify-content-evenly my-3">
+                                <div>
+                                    <small>One-Way</small>
+                                    <p class="fs-4">420SGD</p>
+                                </div>
+                                <div>
+                                    <small>Two-ways</small>
+                                    <p class="fs-4">820SGD</p>
+                                </div>
+                            </div>
                             <a href="" class="btn btn-danger">BOOK NOW</a>
                         </div>
                         <div class="col text-center border-0 shadow-lg py-3 mx-3 rounded-5 rounded bg-white">
-                            <img src="img/starex.webp" class="img-thumbnail border-0" alt="">
-                            <p>Hyundai Starex</p>
-                            <p>(11 seaters)</p>
+                            <img src="img/starex.webp" class="img-fluid border-0" alt="">
+                            <span class="fs-4 fw-bold">Hyundai Starex</span>
+                            <span class="w-25 border border-danger border-2 rounded d-block mx-auto"></span>
+                            <div class="d-flex justify-content-evenly my-3">
+                                <div>
+                                    <small>One-Way</small>
+                                    <p class="fs-4">420SGD</p>
+                                </div>
+                                <div>
+                                    <small>Return</small>
+                                    <p class="fs-4">820SGD</p>
+                                </div>
+                            </div>
                             <a href="" class="btn btn-danger">BOOK NOW</a>
                         </div>
                     </div>
                 </div>
                 <div class="container pb-5">
-                    <h1 class="text-center pb-5">Private Transport From Singapore to Genting Highland</h1>
+                    <h1 class="text-center pb-3 pb-sm-5">Private Transport From Singapore to Genting Highland</h1>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active px-3" id="description-tab" data-toggle="tab" href="#description"
@@ -226,37 +242,39 @@
                     </div>
                 </div>
             </div>
-            <h1 class="text-danger text-center py-5">Malaysia Association of Tour & Travel Agent</h1>
-            <div class="d-flex justify-content-center pb-5 awards">
-                <div class="">
-                    <img src="img/matta-150x150.webp" alt="" width="100">
-                </div>
-                <div class="">
-                    <img src="img/motac-150x150.webp" alt="" width="100">
-                </div>
-                <div class="">
-                    <img src="img/Screen-Shot-2018-10-03-at-11.13.30-AM-150x150.webp" alt="" width="100px">
-                </div>
-                <div class="">
-                    <img src="img/singapore-tourism-150x150.webp" alt="" width="100px">
-                </div>
-                <div class="">
-                    <img src="img/TA-AWards-icon-180x180.webp" alt="" width="100px">
-                </div>
-                <div class="">
-                    <img src="img/tourism-nytdfem4d6gpcyzf82cm2elqh0btjalnlrstulk63i-qaxhibtlui0ntiarmng5wx7sbo46gd7nb6t03ys5i6.webp"
-                        alt="" width="150px">
+            <div class="container">
+                <h1 class="text-danger text-center py-3 py-sm-5">Malaysia Association of Tour & Travel Agent</h1>
+                <div class="d-flex justify-content-center pb-5">
+                    <div class="">
+                        <img src="img/matta-150x150.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="">
+                        <img src="img/motac-150x150.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="">
+                        <img src="img/Screen-Shot-2018-10-03-at-11.13.30-AM-150x150.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="">
+                        <img src="img/singapore-tourism-150x150.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="">
+                        <img src="img/TA-AWards-icon-180x180.webp" alt="" class="img-fluid">
+                    </div>
+                    <div class="">
+                        <img src="img/tourism-nytdfem4d6gpcyzf82cm2elqh0btjalnlrstulk63i-qaxhibtlui0ntiarmng5wx7sbo46gd7nb6t03ys5i6.webp"
+                            alt="" class="img-fluid">
+                    </div>
                 </div>
             </div>
-            <div class="container-fluid bg-black footer">
-                <div class="row text-light">
-                    <div class="col-5 text-center py-5">
+            <div class="container-sm bg-black footer">
+                <div class="row-cols-3 row-cols-sm-4 row text-light justify-content-center">
+                    <div class="col-sm-5 col-12 text-center py-sm-5 py-1">
                         <a href="index.html"><img src="img/logo.png" width="50%" alt=""></a>
                         <p class="width-75 mx-auto">Singapore To Malaysia Leading Provider Of MPV Private Car Travelling
                             Service
                         </p>
                     </div>
-                    <div class="col py-5">
+                    <div class="col-3 col-sm-2 py-sm-5 py-3">
                         <p class=""><strong>Hot Destination</strong></p>
                         <div class="py-1">
                             <span>
@@ -314,9 +332,9 @@
                                 <small> Kuala Lumpur
                                 </small> </span>
                         </div>
-                        <div class="py-1">
+                        <div class="py-1 d-flex">
                             <span>
-                                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+                                <i class="fa-solid fa-location-dot me-1" style="color: #ffffff;"></i>
                             </span>
                             <span>
                                 <small> Genting Highlan</small>d
@@ -324,7 +342,7 @@
                         </div>
 
                     </div>
-                    <div class="col py-5">
+                    <div class="col-4 col-sm-2 py-sm-5 py-3">
                         <p class=""><strong>Services</strong></p>
                         <div class="py-1">
                             <span><i class="fa-solid fa-plane" style="color: #ffffff;"></i></span>
@@ -338,15 +356,15 @@
                             <span><i class="fa-solid fa-people-group" style="color: #ffffff;"></i></span>
                             <span><small>Family Outings</small> </span>
                         </div>
-                        <div class="py-1">
-                            <span><i class="fa-solid fa-user-group" style="color: #ffffff;"></i></span>
+                        <div class="py-1 d-flex">
+                            <span><i class="fa-solid fa-user-group me-1" style="color: #ffffff;"></i></span>
                             <span><small>Theme Park Outings</small> </span>
                         </div>
                     </div>
-                    <div class="col py-5">
+                    <div class="col-4 col-sm-3 py-sm-5 py-3">
                         <p><strong>Contact</strong> </p>
                         <div class="py-1"><span><small>LBTRAVEL.COM</small></span></div>
-                        <div class="py-1 d-flex align-items-center">
+                        <div class="py-1 d-flex">
                             <span><i class="fa-solid fa-map-location-dot me-1" style="color: #ffffff;"></i></span>
                             <span><small>A-122-A, Jalan PJU 10/4, Damansara Damai, 47830 Petaling Jaya,
                                     Selangor</small></span>
@@ -355,22 +373,28 @@
                             <span><i class="fa-solid fa-phone" style="color: #ffffff;"></i></span>
                             <span><small>+65 8057 9903</small></span>
                         </div>
-                        <div class="py-1">
-                            <span><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i></span>
-                            <span><small>+60 11-2825 8565</small></span>
+                        <div class="py-1 d-flex">
+                            <span><i class="fa-brands fa-whatsapp me-1" style="color: #ffffff;"></i></span>
+                            <span><small>+6011-28258565</small></span>
                         </div>
-                        <div class="py-1"><span><i class="fa-brands fa-weixin" style="color: #ffffff;"></i></span>
-                            <span><small>LbTravelwTransport</small></span>
+                        <div class="py-1 d-flex"><span><i class="fa-brands fa-weixin me-1"
+                                    style="color: #ffffff;"></i></span>
+                            <span><small>LbTravelTransport</small></span>
                         </div>
-                        <div class="py-1"> <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
-                            <span><small>Lbtraveltransport@gmail.com</small></span>
+                        <div class="py-1 d-flex"> <span><i class="fa-solid fa-envelope me-1"
+                                    style="color: #ffffff;"></i></span>
+                            <span><small class="text-break">Lbtraveltransport@gmail.com</small></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -178,7 +178,7 @@
     font-size: 70px;
 }
 
-@media screen and (max-width: 1156px) {
+@media screen and (max-width: 1200px) {
     .jb-heading {
         top: 25%;
     }
@@ -199,7 +199,7 @@
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 770px) {
     .bg-malacca {
         height: 700px;
     }
@@ -213,7 +213,7 @@
     }
 
     .jb-heading h1 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .jb-heading h5 {
@@ -221,7 +221,7 @@
     }
 
     .jb-heading {
-        top: 5%;
+        top: 10%;
     }
 
     .car-flex {
@@ -242,13 +242,53 @@
 }
 
 @media screen and (max-width: 515px) {
-    .bg-desaru {
+    .jb-heading {
+        top: 5%;
+    }
+
+    .text-danger {
+        font-size: 15px !important;
+    }
+
+    .bg-jb {
         height: 600px !important;
+    }
+
+    .bg-kuala-lumpur {
+        height: 550px !important;
+    }
+
+    .bg-genting-highland {
+        height: 550px !important;
+    }
+
+    .bg-legoland {
+        height: 550px !important;
+    }
+
+    .bg-malacca {
+        height: 550px !important;
+    }
+
+    .bg-mersing {
+        height: 550px !important;
+    }
+
+    .bg-port-dickson {
+        height: 550px !important;
     }
 }
 
 @media screen and (max-width: 380px) {
+    .jb-heading h1 {
+        font-size: 20px !important;
+    }
+
     .jb-heading h5 {
-        font-size: 15px !important;
+        font-size: 14px !important;
+    }
+
+    .text-danger {
+        font-size: 12px !important;
     }
 }
