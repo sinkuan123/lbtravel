@@ -11,6 +11,12 @@ body {
     font-weight: 400;
 }
 
+.menu-bar,
+.footer {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
 h1 {
     font-weight: 700;
     font-size: 50px;
@@ -262,7 +268,7 @@ h1 {
 
 @media screen and (max-width: 565px) {
     .border {
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
 }
 
@@ -278,7 +284,7 @@ h1 {
     }
 
     .border {
-        font-size: 12px !important;
+        font-size: 10px !important;
     }
 
     h1 {
