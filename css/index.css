@@ -259,25 +259,26 @@ h1 {
     display: none;
 }
 
-@media screen and (max-width: 500px) {
-    #mobile-bar {
-        display: block;
-    }
 
-    #bar {
-        display: none;
+@media screen and (max-width: 565px) {
+    .border {
+        font-size: 16px !important;
     }
+}
+
+
+@media screen and (max-width: 515px) {
 
     p {
-        font-size: 10px;
+        font-size: 10px !important;
     }
 
     div {
-        font-size: 10px;
+        font-size: 10px !important;
     }
 
     .border {
-        font-size: 15px;
+        font-size: 12px !important;
     }
 
     h1 {
@@ -293,21 +294,33 @@ h1 {
     }
 }
 
-@media screen and (max-width: 315px) {
+@media screen and (max-width: 380px) {
+    #mobile-bar {
+        display: block;
+    }
+
+    #bar {
+        display: none;
+    }
+
     .container {
-        margin: 0;
+        margin: 0 !important;
     }
 
     p {
-        font-size: 8px;
+        font-size: 8px !important;
+    }
+
+    small {
+        font-size: 8px !important;
     }
 
     div {
-        font-size: 8px;
+        font-size: 8px !important;
     }
 
     .border {
-        font-size: 8px;
+        font-size: 8px !important;
     }
 
     h1 {
