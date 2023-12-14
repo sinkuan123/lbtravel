@@ -42,3 +42,16 @@ window.addEventListener("resize", function () {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    var nav = document.getElementById("myNav");
+    var bar = document.getElementById("bar");
+    window.addEventListener("click", function () {
+        var isClickInsideNav = nav.contains(event.target);
+        var isClickBar = bar.contains(event.target);
+        if (menuOpen == true) {
+            if (!isClickInsideNav && !isClickBar) {
+                closeNav();
+            }
+        }
+    })
+})

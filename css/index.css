@@ -26,21 +26,28 @@ h1 {
 
 .bg-header {
     background-image: url(../img/bg-kl.jpg);
-    height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.header {
     height: 600px;
     position: relative;
+    color: white;
+}
+
+.bg-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .heading {
     position: absolute;
     top: 20%;
-    width: 90%;
-    color: white;
+    left: 5%;
+    right: 5%;
 }
 
 .bg-car {
@@ -257,6 +264,14 @@ h1 {
 
 
 @media screen and (max-width: 515px) {
+    #mobile-bar {
+        display: block;
+    }
+
+    #bar {
+        display: none;
+    }
+
 
     p {
         font-size: 10px !important;
@@ -288,14 +303,6 @@ h1 {
 }
 
 @media screen and (max-width: 380px) {
-    #mobile-bar {
-        display: block;
-    }
-
-    #bar {
-        display: none;
-    }
-
     .container {
         margin: 0 !important;
     }
