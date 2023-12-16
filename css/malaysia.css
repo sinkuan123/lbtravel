@@ -1,5 +1,5 @@
 .bg-jb {
-    background-image: url(../img/johor-bahru.png);
+    background-image: url(../img/johor-bahru.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -18,7 +18,7 @@
 }
 
 .bg-legoland {
-    background-image: url(../img/legoland.png);
+    background-image: url(../img/legoland.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -38,7 +38,7 @@
 
 
 .bg-malacca {
-    background-image: url(../img/malacca.png);
+    background-image: url(../img/malacca.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -58,7 +58,7 @@
 
 
 .bg-desaru {
-    background-image: url(../img/desaru.png);
+    background-image: url(../img/desaru.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -79,7 +79,7 @@
 
 
 .bg-mersing {
-    background-image: url(../img/mersing.png);
+    background-image: url(../img/mersing.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -98,7 +98,7 @@
 }
 
 .bg-port-dickson {
-    background-image: url(../img/port-dickson.png);
+    background-image: url(../img/port-dickson.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -117,7 +117,7 @@
 }
 
 .bg-genting-highland {
-    background-image: url(../img/genting-highland.png);
+    background-image: url(../img/genting-highland.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
@@ -137,7 +137,7 @@
 
 
 .bg-kuala-lumpur {
-    background-image: url(../img/kuala-lumpur.png);
+    background-image: url(../img/kuala-lumpur.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 805px;
