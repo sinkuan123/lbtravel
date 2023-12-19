@@ -1,3 +1,4 @@
+<?php include 'validate_login.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +13,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="js/script.js">
     <script src="https://kit.fontawesome.com/d6ceb9e7bd.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="img/logo.png" type="image/icon type">
+    <link rel="icon" href="img/logo.webp" type="image/icon type">
     <title>Read One Booking</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <?php include "menu.html"; ?>
+        <div class="bg-black">
+            <div class="container">
+                <div class=" row justify-content-between align-items-center">
+                    <div class="col-3">
+                        <img src="img/logo.webp" width="100px" alt="">
+                    </div>
+                    <div class="col-9 text-end">
+                        <a class="btn btn-light px-2 px-sm-3 p-2" href="?logout=true">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <h2 class="my-3 my-sm-5"><span class="border-5 border-bottom border-danger">Read Booking</span></h2>
             <?php
@@ -65,8 +77,8 @@
                 die('ERROR: ' . $exception->getMessage());
             }
             ?>
-            <table class='table table-hover table-responsive table-bordered'>
-                <tr class="border-top-1 border-black">
+            <table class='table table-hover table-responsive table-border'>
+                <tr class="border-1 border-black">
                     <td class="col-3">id</td>
                     <td><?php echo htmlspecialchars($id, ENT_QUOTES);  ?></td>
                 </tr>
@@ -165,7 +177,6 @@
             </table>
 
         </div>
-        <?php include 'footer.html' ?>
     </div>
     <script src="js/script.js"></script>
     <script>
@@ -189,34 +200,35 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <div id="textToCopy" class="d-none">
-        Trip Type: <?php echo $trip_type; ?> <br>
-        MPV Type: <?php echo $mpv_type; ?> <br>
-        Name: <?php echo $name; ?> <br>
-        Contact Number: <?php echo $contact_number; ?> <br>
-        Email: <?php echo $email; ?> <br>
-        Contact App: <?php echo $contact_app; ?> <br>
-        Nationality: <?php echo $nationality; ?> <br>
-        Pick Up Detail <br>
-        Pick Up Date: <?php echo $pick_up_date; ?> <br>
-        Pick Up Time: <?php echo $pick_up_time; ?> <br>
-        Pick Up Address: <?php echo $pick_up_address; ?> <br>
-        Drop Off Address: <?php echo $drop_off_address; ?> <br>
-        <?php if ($trip_type == "Two Way Transfer") { ?>
-            Return Detail <br>
-            Return Pick Up Date: <?php echo $return_date; ?> <br>
-            Return Pick Up Time: <?php echo $return_time; ?> <br>
-            Return Pick Up Address: <?php echo $return_pick_up_address; ?> <br>
-            Return Drop Off Address: <?php echo $return_drop_off_address; ?> <br>
-        <?php } ?>
-        Passenger & Luggage
-        Adult: <?php echo $adult; ?> <br>
-        Children: <?php echo $children; ?> <br>
-        Luggage: <?php echo $luggage; ?> <br>
-        Unique ID: #<?php echo $id; ?> <br>
 
-        Booking System Date: <?php echo $booking_date; ?> <br>
-    </div>
 </body>
+<div id="textToCopy" class="d-none">
+    Trip Type: <?php echo $trip_type; ?> <br>
+    MPV Type: <?php echo $mpv_type; ?> <br>
+    Name: <?php echo $name; ?> <br>
+    Contact Number: <?php echo $contact_number; ?> <br>
+    Email: <?php echo $email; ?> <br>
+    Contact App: <?php echo $contact_app; ?> <br>
+    Nationality: <?php echo $nationality; ?> <br>
+    Pick Up Detail <br>
+    Pick Up Date: <?php echo $pick_up_date; ?> <br>
+    Pick Up Time: <?php echo $pick_up_time; ?> <br>
+    Pick Up Address: <?php echo $pick_up_address; ?> <br>
+    Drop Off Address: <?php echo $drop_off_address; ?> <br>
+    <?php if ($trip_type == "Two Way Transfer") { ?>
+        Return Detail <br>
+        Return Pick Up Date: <?php echo $return_date; ?> <br>
+        Return Pick Up Time: <?php echo $return_time; ?> <br>
+        Return Pick Up Address: <?php echo $return_pick_up_address; ?> <br>
+        Return Drop Off Address: <?php echo $return_drop_off_address; ?> <br>
+    <?php } ?>
+    Passenger & Luggage
+    Adult: <?php echo $adult; ?> <br>
+    Children: <?php echo $children; ?> <br>
+    Luggage: <?php echo $luggage; ?> <br>
+    Unique ID: #<?php echo $id; ?> <br>
+
+    Booking System Date: <?php echo $booking_date; ?> <br>
+</div>
 
 </html>

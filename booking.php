@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="js/script.js">
     <script src="https://kit.fontawesome.com/d6ceb9e7bd.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="img/logo.png" type="image/icon type">
+    <link rel="icon" href="img/logo.webp" type="image/icon type">
     <title>Online Booking</title>
     <style>
         @media screen and (max-width: 515px) {
@@ -40,7 +40,8 @@
         <div class="container">
             <h2 class="my-3 my-sm-5"><span class="border-5 border-bottom border-danger">Online Booking</span></h2>
             <?php
-            if (isset($_POST['submit'])) {
+
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // include database connection
                 include 'config/database.php';
                 date_default_timezone_set('Asia/Kuala_Lumpur');
@@ -128,11 +129,13 @@
                         $stmt->bindParam(':flight', $flight);
                         $stmt->bindParam(':pick_up_address', $pick_up_address);
                         $stmt->bindParam(':drop_off_address', $drop_off_address);
-                        $stmt->bindParam(':return_date', $return_date);
-                        $stmt->bindParam(':return_time', $return_time);
-                        $stmt->bindParam(':return_flight', $return_flight);
-                        $stmt->bindParam(':return_pick_up_address', $return_pick_up_address);
-                        $stmt->bindParam(':return_drop_off_address', $return_drop_off_address);
+                        if ($trip_type == "Two Way Transfer") {
+                            $stmt->bindParam(':return_date', $return_date);
+                            $stmt->bindParam(':return_time', $return_time);
+                            $stmt->bindParam(':return_flight', $return_flight);
+                            $stmt->bindParam(':return_pick_up_address', $return_pick_up_address);
+                            $stmt->bindParam(':return_drop_off_address', $return_drop_off_address);
+                        }
                         $stmt->bindParam(':adult', $adult);
                         $stmt->bindParam(':children', $children);
                         $stmt->bindParam(':luggage', $luggage);
@@ -195,13 +198,15 @@
                     die('ERROR: ' . $exception->getMessage());
                 }
             }
-            if (!isset($_POST['submit'])) {
+
+            if ($_SERVER["REQUEST_METHOD"] !== "POST") {
             ?>
-                <form method="post" action="">
+                <form id="bookingForm" method="post" action="">
+                    <div id="errorMessages" class="error-messages"></div>
                     <div class="row mt-4">
                         <div class="col-sm my-sm-0 my-2">
-                            <label for="trip_type">Trip Type</label>
-                            <select class="fs-6 form-select form-select-lg" id="trip_type" name="trip_type" aria-label=".form-select-lg example" onchange="toggleFunction()" required>
+                            <label for="trip_type">Trip Type <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="tripTypeError"></span>
+                            <select class="fs-6 form-select form-select-lg" id="trip_type" name="trip_type" aria-label=".form-select-lg example" onchange="toggleFunction()">
                                 <option value="" selected disabled hidden>Select Your Trip Type</option>
                                 <option value="One Way Transfer">One Way Transfer</option>
                                 <option value="Two Way Transfer" name="haha">Two Way Transfer</option>
@@ -209,8 +214,8 @@
                             </select>
                         </div>
                         <div class="col-sm my-sm-0 my-2">
-                            <label for="mpv_type">MPV Type</label>
-                            <select class="form-select form-select-lg fs-6" id="mpv_type" name="mpv_type" required>
+                            <label for="mpv_type">MPV Type <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="mpvTypeError"></span>
+                            <select class="form-select form-select-lg fs-6" id="mpv_type" name="mpv_type">
                                 <option value="" class="opacity-50" selected disabled hidden>Select Your MPV Type</option>
                                 <option value="Toyota Innova">Toyota Innova</option>
                                 <option value="Toyota Alphard">Toyota Alphard</option>
@@ -221,22 +226,22 @@
 
                     <div class="row my-3">
                         <div class="col-sm my-sm-0 my-2">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name" id="name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>" required>
+                            <label for="name">Name <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="nameError"></span>
+                            <input type="text" class="form-control" name="name" id="name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>">
                         </div>
 
                         <div class="col">
-                            <label for="contact_number">Contact Number</label>
-                            <input type="text" name="contact_number" id="contact_number" class="form-control" value="<?php echo isset($_POST['contact_number']) ? $_POST['contact_number'] : ''; ?>" required>
+                            <label for="contact_number">Contact Number <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="contactNumberError"></span>
+                            <input type="text" name="contact_number" id="contact_number" class="form-control" value="<?php echo isset($_POST['contact_number']) ? $_POST['contact_number'] : ''; ?>">
                         </div>
                     </div>
                     <div class="col my-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>" required>
+                        <label for="email">Email <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="emailError"></span>
+                        <input type="email" class="form-control" name="email" id="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
                     </div>
                     <div class="row my-3">
                         <div class="col">
-                            <label for="contact_app">Contact App Prefence</label>
+                            <label for="contact_app">Contact App Prefence <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="contactAppError"></span>
                             <select name="contact_app" id="contact_app" class="form-select form-select-lg fs-6">
                                 <option value="" selected hidden disabled>Select an Option</option>
                                 <option value="WhatsApp">WhatsApp</option>
@@ -248,7 +253,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <label for="nationality">Nationality</label>
+                            <label for="nationality">Nationality <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="nationalityError"></span>
                             <input type="text" name="nationality" id="nationality" class="form-control" value="<?php echo isset($_POST['nationality']) ? $_POST['nationality'] : ''; ?>">
                         </div>
                     </div>
@@ -256,12 +261,12 @@
 
                     <div class="row row-cols-2 row-cols-sm-3 my-3">
                         <div class="col-6 col-sm-4">
-                            <label for="pick_up_date">Pick Up Date</label>
-                            <input type="date" name="pick_up_date" id="pick_up_date" class="form-control" value="<?php echo isset($_POST['pick_up_date']) ? $_POST['pick_up_date'] : ''; ?>" required>
+                            <label for="pick_up_date">Pick Up Date <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="pickUpDateError"></span>
+                            <input type="date" name="pick_up_date" id="pick_up_date" class="form-control" value="<?php echo isset($_POST['pick_up_date']) ? $_POST['pick_up_date'] : ''; ?>">
                         </div>
                         <div class="col-6 col-sm-4">
-                            <label for="pick_up_time">Pick Up Time</label>
-                            <input type="time" name="pick_up_time" id="pick_up_time" class="form-control" value="<?php echo isset($_POST['pick_up_time']) ? $_POST['pick_up_time'] : ''; ?>" required>
+                            <label for="pick_up_time">Pick Up Time <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="pickUpTimeError"></span>
+                            <input type="time" name="pick_up_time" id="pick_up_time" class="form-control" value="<?php echo isset($_POST['pick_up_time']) ? $_POST['pick_up_time'] : ''; ?>">
                         </div>
                         <div class="col-12 col-sm-4">
                             <label for="flight">Flight Detail</label>
@@ -269,11 +274,11 @@
                         </div>
                     </div>
                     <div class="col my-3">
-                        <label for="pick_up_address">Pick Up Address</label>
+                        <label for="pick_up_address">Pick Up Address<span class="text-danger">*</span> </label><span class="text-danger float-end error" id="pickUpAddressError"></span>
                         <input type="text" name="pick_up_address" id="pick_up_address" class="form-control" value="<?php echo isset($_POST['pick_up_address']) ? $_POST['pick_up_address'] : ''; ?>">
                     </div>
                     <div class="col my-3">
-                        <label for="drop_off_address">Drop Off Address</label>
+                        <label for="drop_off_address">Drop Off Address <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="dropOffAddressError"></span>
                         <input type="text" name="drop_off_address" id="drop_off_address" class="form-control" value="<?php echo isset($_POST['drop_off_address']) ? $_POST['drop_off_address'] : ''; ?>">
                     </div>
 
@@ -281,23 +286,23 @@
                         <legend class="my-3 text-primary">Return Detail</legend>
                         <div class="row my-3">
                             <div class="col">
-                                <label for="return_date">Return Date</label>
+                                <label for="return_date">Return Date <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="returnDateError"></span>
                                 <input type="date" class="form-control" name="return_date" id="return_date" value="<?php echo isset($_POST['return_date']) ? $_POST['return_date'] : ''; ?>">
                             </div>
-                            <div class="col"><label for="return_time">Return Time</label>
+                            <div class="col"><label for="return_time">Return Time <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="returnTimeError"></span>
                                 <input type="time" class="form-control" name="return_time" id="return_time" value="<?php echo isset($_POST['return_time']) ? $_POST['return_time'] : ''; ?>">
                             </div>
                             <div class="col">
-                                <label for="return_flight">Flight Detail</label>
+                                <label for="return_flight">Flight Detail </label>
                                 <input type="text" class="form-control" name="return_flight" id="return_flight" value="<?php echo isset($_POST['return_flight']) ? $_POST['return_flight'] : ''; ?>">
                             </div>
                         </div>
                         <div class="col my-3">
-                            <label for="return_pick_up_address">Return Pick Up Address</label>
+                            <label for="return_pick_up_address">Return Pick Up Address <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="returnPickUpAddressError"></span>
                             <input type="text" class="form-control" name="return_pick_up_address" id="return_pick_up_address" value="<?php echo isset($_POST['return_pick_up_address']) ? $_POST['return_pick_up_address'] : ''; ?>">
                         </div>
                         <div class="col my-3">
-                            <label for="return_drop_off_address">Return Drop Off Address</label>
+                            <label for="return_drop_off_address">Return Drop Off Address <span class="text-danger">*</span> </label><span class="text-danger float-end error" id="returnDropOffAddressError"></span>
                             <input type="text" class="form-control" name="return_drop_off_address" id="return_drop_off_address" value="<?php echo isset($_POST['return_drop_off_address']) ? $_POST['return_drop_off_address'] : ''; ?>">
                         </div>
                     </div>
@@ -305,11 +310,11 @@
                     <legend class="my-3 text-primary">Passenger and Luggage</legend>
                     <div class="row my-3">
                         <div class="col">
-                            <label for="adult">Adult</label>
+                            <label for="adult">Adult<span class="text-danger">*</span> </label><span class="text-danger float-end error" id="adultError"></span>
                             <input type="number" name="adult" id="adult" class="form-control" value="<?php echo isset($_POST['adult']) ? $_POST['adult'] : ''; ?>">
                         </div>
                         <div class="col">
-                            <label for="children">Children</label>
+                            <label for="children">Children<span class="text-danger">*</span> </label><span class="text-danger float-end error" id="childrenError"></span>
                             <input type="number" name="children" id="children" class="form-control" value="<?php echo isset($_POST['children']) ? $_POST['children'] : ''; ?>">
                         </div>
                         <div class="col">
@@ -322,10 +327,10 @@
                         <textarea name="enquiry" id="enquiry" cols="30" rows="2" class="form-control"><?php echo isset($_POST['enquiry']) ? $_POST['enquiry'] : ''; ?></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary my-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary my-2" name="submitBtn">Submit</button>
                 </form>
             <?php } else {
-                echo "<div class='alert alert-success my-3'>Record was saved.</div>";
+                echo "<div class='alert alert-success my-3'>Form was submitted.</div>";
             } ?>
         </div>
         <div class="container-fluid mt-3 py-5 bg-body-secondary">
@@ -335,47 +340,19 @@
                 <div class="row row-cols-2 row-cols-sm-4 my-sm-5 my-3">
                     <div class="col">
                         <h2 class="text-center">Call Us</h2>
-                        <p class="text-center">(+60)11 2825 8565 (English, Mandarin, and Malay)</p>
+                        <p class="text-center">+65 8913 4901 <br>(English, Mandarin, and Malay)</p>
                     </div>
                     <div class="col">
                         <h2 class="text-center">Whatsapp Us</h2>
-                        <p class="text-center">(+60)11 2825 8565</p>
+                        <p class="text-center">+65 8913 4901</p>
                     </div>
                     <div class="col">
                         <h2 class="text-center">Wechat / Line ID</h2>
-                        <p class="text-center">(+60)11 2825 8565</p>
+                        <p class="text-center">+65 8913 4901</p>
                     </div>
                     <div class="col">
                         <h2 class="text-center">Email Us</h2>
                         <p class="text-center text-break">Lbtraveltransport@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid mt-5">
-            <div class="container">
-                <h1 class="text-danger text-center">Our Social media Channels</h1>
-                <p class="text-center">For online booking, give us 24 hours to send you the latest quotation after you have submitted your booking details</p>
-                <div class="row my-5">
-                    <div class="col">
-                        <h2 class="text-center">Facebook</h2>
-                        <p class="text-center">LB Travel Transport</p>
-                    </div>
-                    <div class="col">
-                        <h2 class="text-center">Instagram</h2>
-                        <p class="text-center">LB Travel Transport</p>
-                    </div>
-                    <div class="col">
-                        <h2 class="text-center">Twitter</h2>
-                        <p class="text-center">LB Travel Transport</p>
-                    </div>
-                    <div class="col">
-                        <h2 class="text-center">Linkedin</h2>
-                        <p class="text-center">LB Travel Transport</p>
-                    </div>
-                    <div class="col">
-                        <h2 class="text-center">Youtube</h2>
-                        <p class="text-center">LB Travel Transport</p>
                     </div>
                 </div>
             </div>
@@ -393,8 +370,326 @@
                 document.getElementById("return_detail").style.display = "none";
             }
         }
-    </script>
-    <script>
+
+        function validateEmailFormat(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        // Function to display email validation error
+        function displayEmailError() {
+            const userEmail = document.getElementById('email').value;
+            const emailError = document.getElementById('emailError');
+
+            if (!validateEmailFormat(userEmail)) {
+                emailError.textContent = 'Please enter a valid email address.';
+            } else {
+                emailError.textContent = '';
+            }
+        }
+
+        // Event listener to trigger validation onBlur (when focus leaves the email field)
+        document.getElementById('email').addEventListener('blur', function() {
+            displayEmailError();
+        });
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var tripType = document.getElementById("trip_type").value;
+            var mpvType = document.getElementById("mpv_type").value;
+            var name = document.getElementById("name").value;
+            var contactNumber = document.getElementById("contact_number").value;
+            var email = document.getElementById("email").value;
+            var contactApp = document.getElementById("contact_app").value;
+            var nationality = document.getElementById("nationality").value;
+            var pickUpDate = document.getElementById("pick_up_date").value;
+            var pickUpTime = document.getElementById("pick_up_time").value;
+            var pickUpAddress = document.getElementById("pick_up_address").value;
+            var dropOffAddress = document.getElementById("drop_off_address").value;
+            var returnPickUpDate = document.getElementById("return_date").value;
+            var returnPickUpTime = document.getElementById("return_time").value;
+            var returnPickUpAddress = document.getElementById("return_pick_up_address").value;
+            var returnDropOffAddress = document.getElementById("return_drop_off_address").value;
+            var adult = document.getElementById("adult").value;
+            var children = document.getElementById("children").value;
+
+            var errorMessage = [];
+
+            if (tripType === "") {
+                errorMessage.push("Trip Type");
+                document.getElementById("tripTypeError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Trip Type");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("tripTypeError").textContent = "";
+            }
+            if (mpvType === "") {
+                errorMessage.push("MPV Type");
+                document.getElementById("mpvTypeError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("MPV Type");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("mpvTypeError").textContent = "";
+            }
+            if (name === "") {
+                errorMessage.push("name");
+                document.getElementById("nameError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("name");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("nameError").textContent = "";
+            }
+            if (contactNumber === "") {
+                errorMessage.push("Contact Number");
+                document.getElementById("contactNumberError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Contact Number");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("contactNumberError").textContent = "";
+            }
+            if (email === "") {
+                errorMessage.push("Email");
+                document.getElementById("emailError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Email");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("emailError").textContent = "";
+            }
+
+            if (contactApp === "") {
+                errorMessage.push("Contact App");
+                document.getElementById("contactAppError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Contact App");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("contactAppError").textContent = "";
+            }
+            if (nationality === "") {
+                errorMessage.push("Nationality");
+                document.getElementById("nationalityError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Nationality");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("nationalityError").textContent = "";
+            }
+            if (pickUpDate === "") {
+                errorMessage.push("Pick Up Date");
+                document.getElementById("pickUpDateError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Pick Up Date");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("pickUpDateError").textContent = "";
+            }
+            if (pickUpTime === "") {
+                errorMessage.push("Pick Up Time");
+                document.getElementById("pickUpTimeError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Pick Up Time");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("pickUpTimeError").textContent = "";
+            }
+            if (pickUpAddress === "") {
+                errorMessage.push("Pick Up Address");
+                document.getElementById("pickUpAddressError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Pick Up Address");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("pickUpAddressError").textContent = "";
+            }
+            if (dropOffAddress === "") {
+                errorMessage.push("Drop Off Address");
+                document.getElementById("dropOffAddressError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Drop Off Address");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("dropOffAddressError").textContent = "";
+            }
+            if (tripType === "Two Way Transfer") {
+                if (returnPickUpDate === "") {
+                    errorMessage.push("Return Pick Up Date");
+                    document.getElementById("returnDateError").textContent = "Required";
+                } else {
+                    var index = errorMessage.indexOf("Return Pick Up Date");
+                    if (index !== -1) {
+                        errorMessage.splice(index, 1); // Remove the error message at the found index
+                    }
+                    document.getElementById("returnDateError").textContent = "";
+
+                }
+                if (returnPickUpTime === "") {
+                    errorMessage.push("Return Pick Up Time");
+                    document.getElementById("returnTimeError").textContent = "Required";
+                } else {
+                    var index = errorMessage.indexOf("Return Pick Up Time");
+                    if (index !== -1) {
+                        errorMessage.splice(index, 1); // Remove the error message at the found index
+                    }
+                    document.getElementById("returnTimeError").textContent = "";
+
+                }
+                if (returnPickUpAddress === "") {
+                    errorMessage.push("Return Pick Up Address");
+                    document.getElementById("returnPickUpAddressError").textContent = "Required";
+                } else {
+                    var index = errorMessage.indexOf("Return Pick Up Address");
+                    if (index !== -1) {
+                        errorMessage.splice(index, 1); // Remove the error message at the found index
+                    }
+                    document.getElementById("returnPickUpAddressError").textContent = "";
+
+                }
+                if (returnDropOffAddress === "") {
+                    errorMessage.push("Return Drop Off Address");
+                    document.getElementById("returnDropOffAddressError").textContent = "Required";
+                } else {
+                    var index = errorMessage.indexOf("Return Drop Off Address");
+                    if (index !== -1) {
+                        errorMessage.splice(index, 1); // Remove the error message at the found index
+                    }
+                    document.getElementById("returnDropOffAddressError").textContent = "";
+
+                }
+
+            }
+            if (adult === "") {
+                errorMessage.push("Adult");
+                document.getElementById("adultError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Adult");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("adultError").textContent = "";
+            }
+
+            if (children === "") {
+                errorMessage.push("Children");
+                document.getElementById("childrenError").textContent = "Required";
+            } else {
+                var index = errorMessage.indexOf("Children");
+                if (index !== -1) {
+                    errorMessage.splice(index, 1); // Remove the error message at the found index
+                }
+                document.getElementById("childrenError").textContent = "";
+            }
+
+            // Display error messages if any
+            if (errorMessage.length > 0) {
+                // Scroll to the top of the form to show error messages
+                var firstErrorElement = document.querySelector(".error");
+                if (firstErrorElement) {
+                    // Get the top position of the first error element
+                    var errorTopPosition = firstErrorElement.getBoundingClientRect().top;
+
+                    // Scroll a bit higher (50px) than the error element
+                    window.scrollTo({
+                        top: window.scrollY + errorTopPosition - 150,
+                        behavior: "smooth"
+                    });
+                }
+                return false;
+            } else {
+                event.target.submit();
+            }
+        });
+        // Function to clear specific error message by ID
+        function clearSpecificErrorMessage(errorId) {
+            document.getElementById(errorId).textContent = "";
+        }
+        // Event listeners to clear specific error messages on input change
+        var tripTypeInput = document.getElementById("trip_type");
+        tripTypeInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("tripTypeError");
+        });
+        var mpvTypeInput = document.getElementById("mpv_type");
+        mpvTypeInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("mpvTypeError");
+        });
+        var contactNumberInput = document.getElementById("contact_number");
+        contactNumberInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("contactNumberError");
+        });
+        var nameInput = document.getElementById("name");
+        nameInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("nameError");
+        });
+        var emailInput = document.getElementById("email");
+        emailInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("emailError");
+        });
+        var contactAppInput = document.getElementById("contact_app");
+        contactAppInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("contactAppError");
+        });
+        var nationalityInput = document.getElementById("nationality");
+        nationalityInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("nationalityError");
+        });
+        var pickUpDateInput = document.getElementById("pick_up_date");
+        pickUpDateInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("pickUpDateError");
+        });
+        var pickUpTimeInput = document.getElementById("pick_up_time");
+        pickUpTimeInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("pickUpTimeError");
+        });
+        var pickUpAddressInput = document.getElementById("pick_up_address");
+        pickUpAddressInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("pickUpAddressError");
+        });
+        var dropOffAddressInput = document.getElementById("drop_off_address");
+        dropOffAddressInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("dropOffAddressError");
+        });
+        var returnPickUpDateInput = document.getElementById("return_date");
+        returnPickUpDateInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("returnDateError");
+        });
+        var returnTimeInput = document.getElementById("return_time");
+        returnTimeInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("returnTimeError");
+        });
+        var returnPickUpAddressInput = document.getElementById("return_pick_up_address");
+        returnPickUpAddressInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("returnPickUpAddressError");
+        });
+        var returnDropOffAddressInput = document.getElementById("return_drop_off_address");
+        returnDropOffAddressInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("returnDropOffAddressError");
+        });
+
+        var adultInput = document.getElementById("adult");
+        adultInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("adultError");
+        });
+        var childrenInput = document.getElementById("children");
+        childrenInput.addEventListener("input", function() {
+            clearSpecificErrorMessage("childrenError");
+        });
+
+
         function openWhatsApp() {
             // Your WhatsApp URL
             var whatsappURL = "https://wa.me/601128258565";
