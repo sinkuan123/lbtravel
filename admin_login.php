@@ -33,6 +33,14 @@ if (isset($_SESSION['id'])) {
             width: 30%;
         }
 
+        @media screen and (width < 500px) {
+            .loginform {
+                width: 70%;
+                left: 15%;
+                top: 15%;
+            }
+        }
+
         .logo {
             position: absolute;
             bottom: 0;

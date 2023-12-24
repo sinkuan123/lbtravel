@@ -46,8 +46,8 @@ h1 {
 .heading {
     position: absolute;
     top: 20%;
-    left: 5%;
-    right: 5%;
+    left: 0;
+    right: 0;
 }
 
 .bg-car {
@@ -106,6 +106,7 @@ h1 {
 
     .heading {
         top: 10%;
+        left: 0;
     }
 
     .contact-btn {
@@ -264,6 +265,10 @@ h1 {
 
 
 @media screen and (max-width: 515px) {
+    .bg-header {
+        height: 400px !important;
+    }
+
     #mobile-bar {
         display: block;
     }
@@ -303,6 +308,10 @@ h1 {
 }
 
 @media screen and (max-width: 380px) {
+    .bg-header {
+        height: 400px !important;
+    }
+
     .container {
         margin: 0 !important;
     }

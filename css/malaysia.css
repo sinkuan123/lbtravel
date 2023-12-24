@@ -170,8 +170,8 @@
 .jb-heading {
     position: absolute;
     top: 20%;
-    left: 5%;
-    right: 5%;
+    left: 0;
+    right: 0;
 }
 
 .jb-heading h1 {
@@ -244,6 +244,7 @@
 @media screen and (max-width: 515px) {
     .jb-heading {
         top: 5%;
+        left: 0;
     }
 
     .text-danger {
